@@ -1,25 +1,58 @@
 ***ANSWER ALL OF THE QUESTIONS BELOW***
 
 What is a programming language?
-Answer:
+Answer:A programming language is a system of notation used by programmers to write computer program. Programming languages have their own syntax, rules, and structure, and once a programmer learns them,
+they write the source code in an IDE.The code is then often compiled into machine language that can be understood by the computer.
 
-What is a JDK composed of? Define each components?
-Answer:
+What is a JDK composed of? Define each component?
+Answer: The JDK is composed of the following components:
+        -JRE (Java Runtime Environment): The JRE is a subsystem of the JDK that provides runtime facilities like JVM (Java Virtual Machine), classes, executable files like .jar file, etc.
+
+        -JVM (Java Virtual Machine): The JVM is an abstract machine that is used to check the intermediate code known as "bytecode".It is a subsystem of the JDK and JRE.
+
+        -Compiler (javac): The compiler is a tool that is used to compile Java source code into bytecode.
+
+        -Archiver (jar): The archiver is a tool that is used to package Java class files into a single file, called a JAR (Java Archive) file.
+
+        -Documentation generator (javadoc): The documentation generator is a tool that is used to generate API documentation from Java source code.
+
 
 What is an IDE?
-Answer:
+Answer: An IDE, or Integrated Development Environment, is a software application that allows developers to write, debug, and test code for multiple programming languages. Some of the key features of an IDE include:
+  - Code editor: A text editor that can assist in writing software code with features such as syntax highlighting, language-specific auto-completion, and checking for bugs as code is being written.
+  - Compiler: A tool that translates source code into machine code.
+  -Debugger: A tool that helps to identify and fix errors in code.
+
+  - Syntax checker: A tool that checks code for syntax errors.
+
+  -Code generator: A tool that generates code automatically.
 
 What are some of the most popular Java IDEs available in the market?
 Answer:
+IntelliJ IDEA
+Eclipse
+NetBeans
+BlueJ
+JDeveloper
+Visual Studio
 
 Explain the entire java life cycle.
-Answer:
+Answer: The Java life cycle refers to the process that a Java program goes through from the time it is written to the time it is executed. The life cycle of a Java program includes the following stages:
+1-Writing the code: The first stage of the Java life cycle is writing the code. This involves using a text editor or an integrated development environment (IDE) to write the Java code.
+2-Compiling the code: Once the code is written, it needs to be compiled into bytecode. The Java compiler converts the source code into bytecode, which is a platform-independent format that can
+be executed on any machine that has a Java Virtual Machine (JVM) installed.
+3-Loading the class: The JVM loads the bytecode into memory and creates an instance of the class.
+4-Verifying the bytecode: The JVM verifies the bytecode to ensure that it is valid and does not violate any security constraints.
+5-Executing the code: The JVM executes the bytecode, which results in the execution of the Java program.
+6-Garbage collection: During the execution of the Java program, the JVM automatically manages the memory by performing garbage collection. This involves freeing up memory that is no longer being used by the program.
+7-Termination: The final stage of the Java life cycle is termination. This occurs when the program has finished executing or when it is terminated by the user.
 
 What is a class?
-Answer:
+Answer:A class is an essential concept in object-oriented programming that defines a blueprint for creating objects.In Java, a class is a group of variables of different data types and a group of methods.A class
+declaration can include components such as modifiers, the class keyword, class name, superclass, interfaces, and body
 
 What is an object?
-Answer:
+Answer:An object is an instance of a particular class or subclass with the class's own methods or procedures and data variables. It stores its state in fields and exposes its behavior through methods.
 
 What is the entry point of a Java project?
 Answer:
