@@ -14,7 +14,7 @@ public class Fibonacci {
         int previousNumber = 0;
         int nextNumber = 1;
 
-        System.out.print("Fibonacci Series of "+maxNumber+" numbers:");
+        System.out.println("Fibonacci Series of "+maxNumber+" numbers:");
 
         for (int i = 0; i <= maxNumber; ++i)
         {

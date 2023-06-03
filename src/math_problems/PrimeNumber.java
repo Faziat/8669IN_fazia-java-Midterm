@@ -14,6 +14,7 @@ public class PrimeNumber {
     public static void main(String[] args) {
 
         int limit = 1000000;
+        System.out.println("");
         System.out.println("Prime numbers from 2 to " + limit + " are:");
         for (int i = 2; i <= limit; i++) {
             boolean isPrime = true;
