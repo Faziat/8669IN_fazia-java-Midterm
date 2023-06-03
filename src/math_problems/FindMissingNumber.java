@@ -24,7 +24,6 @@ public class FindMissingNumber {
         }
         return sum - arrSum;
     }
-
     public static int findMissingNumber2(int[] arr2){
         int[] arrTest = arr2;
 
