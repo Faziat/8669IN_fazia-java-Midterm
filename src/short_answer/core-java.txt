@@ -198,64 +198,104 @@ It is a method of the Object class.
 
 
 What is a constructor?
-Answer:
+Answer: A constructor is a special method in object-oriented programming that is used to initialize objects of a class.
+It is called automatically when an object of a class is created and is responsible for setting initial values for the object's attributes.
+
+In Java, a constructor is a block of code similar to a method that is called when an instance of a class is created.
+It constructs the values at the time of object creation, and it is not necessary to write a constructor for a class because the Java compiler
+creates a default constructor if the class doesn't have any.
+There are two types of constructors in Java: no-arg constructors and parameterized constructors.
+
 
 Can we have multiple constructors in a class?
-Answer:
+Answer: Yes, a class can have multiple constructors .This is known as constructor overloading in java.
+Constructor overloading allows a class to have multiple constructors with different parameter lists. Each constructor can initialize
+ the object's fields in a different way, depending on the parameters passed to it.
 
 If we don't have a constructor declared, what is called during the object creation?
-Answer:
+Answer: In Java, if a class does not explicitly declare any constructors, the Java compiler automatically provides a no-argument constructor called the default constructor.
 
 What is "this" keyword in Java? When would we use it?
-Answer:
+Answer: In Java, this is a keyword that refers to the current object inside a method or a constructor
+It is used to differentiate between class attributes and parameters with the same name, as a class attribute can be shadowed by a method or constructor parameter.
+
 
 What is "super" keyword in Java? What are some scenarios we would use it?
-Answer:
+Answer: In Java, the super keyword is used to refer to the objects of the immediate parent class. It is a reference variable that is used to refer to the immediate parent class object.
+
 
 What does JVM stand for?
-Answer:
+Answer: JVM stands for Java Virtual Machine.
 
 Is JVM platform independent?
-Answer:
+Answer: the JVM is not platform-independent,However, Java is platform-independent because the bytecode produced by the javac compiler can be run on a variety of operating systems
+The bytecode produced by the javac compiler is platform-independent and requires only the JVM to run
 
 What version of Java are you using?
-Answer:
+Answer: I'm using java version "17.0.7" .
 
 What does JAR stand for?
-Answer:
+Answer: JAR stands for Java ARchive.
 
 What is the difference between JDK and JVM?
-Answer:
+Answer: JDK is a software development kit used for developing Java applications and applets,and JVM is an environment for executing bytecode.
+
 
 What is the difference between JVM and JRE?
-Answer:
+Answer:JVM is contained or inbuilt in both JDK and JRE and is platform-independent.
+
 
 Explain the difference between compile-time and run-time?
-Answer:
+Answer: In programming Compile-time is the period when the source code is translated into machine code or executable code by a compiler or interpreter.
+ Run-time is the period when the executable code is running and the program is being executed.
 
 What is heap?
-Answer:
+Answer:A heap is a specialized tree-based data structure that is essentially an almost complete binary tree that satisfies
+the heap property.
 
 How does Java manage its memory?
-Answer:
+Answer:Java memory management divides into two major parts: JVM Memory Structure and Working of Garbage Collector
+VM defines various run time data areas in a heap, which are used during the program execution. The memory areas are
+destroyed when JVM exits, whereas the data areas are destroyed when the thread exits.Java objects reside in an area
+called the heap, which is created when the JVM starts up and may increase or decrease in
+size while the application runs. When the heap becomes full, garbage is collected. During the garbage collection,
+objects that are no longer used are cleared, thus making space for new objects.
+
 
 What is the difference between String, StringBuffer and StringBuilder?
-Answer:
+Answer: In Java, String, StringBuffer, and StringBuilder are classes used to represent a sequence of characters.
+The main difference between them is that String is immutable, while StringBuffer and StringBuilder are mutable.
 
 What is Singleton class?
-Answer:
+Answer: A Singleton class is a design pattern that ensures that a class can only have one object or instance at a time.
+This pattern is useful when exactly one object is needed to coordinate actions across a system, or when there is a need
+to restrict the limit of the number of object creations to only one.
+
 
 What is Serialization and Deserialization?
-Answer:
+Answer: Serialization and deserialization are two important concepts in programming that allow objects to be easily stored
+transmitted, and reconstructed. Serialization is the process of converting an object’s state to a byte stream, which can
+then be saved to a file, sent over a network, or stored in a database. The byte stream represents the object’s state
+which can later be reconstructed to create a new copy of the object.
+
 
 Explain the difference between While and Do..While loops?
-Answer:
+Answer: The main difference between the two is when the condition is checked. In a while loop, the condition is checked
+at the beginning of the loop, and if the condition is true, then only statements in that loop will be executed.
+In contrast, in a do-while loop, the condition is checked at the end of the loop. Therefore, the do-while loop guarantees
+one execution of the loop logic, whereas the while loop does not.
+
 
 What is Enum?
-Answer:
+Answer: An enum, short for enumeration, is a special data type that allows a variable to be a set of predefined constants
+The variable must be equal to one of the values that have been predefined for it. In Java, we define an enum type by
+using the enum keyword. An enum declaration defines a class (called an enum type) that can include methods and other fields
 
 What is Iterator?
-Answer:
+Answer: An iterator is an object that allows a programmer to traverse a container, particularly lists
+It is an interface that provides a way to access the elements of a collection object sequentially without exposing its
+underlying representation.
+
 
 Which one will take more memory: an int or Integer? Why?
 Answer:
