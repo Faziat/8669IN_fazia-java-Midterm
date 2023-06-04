@@ -22,126 +22,143 @@ import databases.SharedStepsDatabase;
      *         100000
      */
 
-public class SortEfficiency {
 
-    public static void main(String[] args) throws Exception {
-        // Declare and initialize an array of a desired length with random numbers (Try this with 100, 1000, 10000, 100000)
-        int[] numberArray = new int[100];
-        insertRandomNumbersIntoArray(numberArray);
+    public class SortEfficiency {
 
-        SortingAlgorithms sort = new SortingAlgorithms();
-        SharedStepsDatabase ssdb = new SharedStepsDatabase();
+        public static void main(String[] args) throws Exception {
+            // Declare and initialize an array of a desired length with random numbers (Try this with 100, 1000, 10000, 100000)
+            int[] numberArray = new int[1000];
+            insertRandomNumbersIntoArray(numberArray);
 
-        // region Selection Sort
-        numberArray = sort.selectionSort(numberArray);
-        long selectionSortExecutionTime = sort.executionTime;
+            SortingAlgorithms sort = new SortingAlgorithms();
+            SharedStepsDatabase ssdb = new SharedStepsDatabase();
 
-        System.out.println("***SELECTION SORT***\nArray Length: " + numberArray.length + "\nExecution Time: "
-                + selectionSortExecutionTime + " milliseconds");
+            // region Selection Sort
+            numberArray = sort.selectionSort(numberArray);
+            long selectionSortExecutionTime = sort.executionTime;
 
-        // Insert sorted array into a database table, with the desired table name and column name
-        ssdb.insertIntegerArray("selection_sort", "sorted_numbers", numberArray);
+            System.out.println("***SELECTION SORT***\nArray Length: " + numberArray.length + "\nExecution Time: "
+                    + selectionSortExecutionTime + " milliseconds");
 
-        // Retrieve all elements from the newly created table
-        String query = "SELECT * FROM SELECTION_SORT";
-        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
-        printValue(sorted_numbers);
+            // Insert sorted array into a database table, with the desired table name and column name
+            ssdb.insertIntegerArray("selection_sort", "sorted_numbers", numberArray);
 
-        // endregion
+            // Retrieve all elements from the newly created table
+            String query = "SELECT * FROM SELECTION_SORT";
+            List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
+            printValue(sorted_numbers);
 
-        // You must randomize the number array after each sorting algorithm to prepare it for the next sorting algorithm
-        randomize(numberArray);
+            // endregion
 
-        // region Insertion Sort
-        numberArray = sort.insertionSort(numberArray);
-        long insertionSortExecutionTime = sort.executionTime;
+            // You must randomize the number array after each sorting algorithm to prepare it for the next sorting algorithm
+            randomize(numberArray);
 
-        System.out.println("Total Execution Time of " + numberArray.length + " numbers in Insertion Sort took: "
-                + insertionSortExecutionTime + " milliseconds");
+            // region Insertion Sort
+            numberArray = sort.insertionSort(numberArray);
+            long insertionSortExecutionTime = sort.executionTime;
 
-        // endregion
+            System.out.println("Total Execution Time of " + numberArray.length + " numbers in Insertion Sort took: "
+                    + insertionSortExecutionTime + " milliseconds");
 
-        randomize(numberArray);
+            // endregion
 
-        // region Bubble Sort
+            randomize(numberArray);
 
-        // endregion
+            // region Bubble Sort
+            numberArray = sort.bubbleSort(numberArray);
 
-        randomize(numberArray);
+            long bubbleSortExecutionTime = sort.executionTime;
 
-        // region Merge Sort
+            System.out.println("Total Execution Time of " + numberArray.length + " numbers in Bubble Sort took: "
+                    + bubbleSortExecutionTime + " milliseconds");
+            // endregion
 
-        // endregion
+            randomize(numberArray);
 
-        randomize(numberArray);
+            // region Merge Sort
+            numberArray = sort.mergeSort(numberArray);
 
-        // region Quick Sort
+            long mergeSortExecutionTime = sort.executionTime;
 
-        // endregion
+            System.out.println("Total Execution Time of " + numberArray.length + " numbers in merge Sort took: "
+                    + mergeSortExecutionTime + " milliseconds");
 
-        randomize(numberArray);
+            // endregion
 
-        // region Heap Sort
+            randomize(numberArray);
 
-        // endregion
+            // region Quick Sort
+            numberArray = sort.quickSort(numberArray);
 
-        randomize(numberArray);
+            long quickSortExecutionTime = sort.executionTime;
 
-        // region Bucket Sort
+            System.out.println("Total Execution Time of " + numberArray.length + " numbers in Quick Sort took: "
+                    + quickSortExecutionTime + " milliseconds");
+            // endregion
 
-        // endregion
+            randomize(numberArray);
 
-        randomize(numberArray);
+            // region Heap Sort
 
-        // region Shell Sort
+            // endregion
 
-        // endregion
-    }
+            randomize(numberArray);
 
-    // region Helper Methods
-    /**
-     * Inserts random integers into an int[] array. All numbers have an upper bound of 1,000,000
-     *
-     * @param array Array to insert numbers into
-     */
-    private static void insertRandomNumbersIntoArray(int[] array) {
-        Random rand = new Random();
-        for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(1000000);
+            // region Bucket Sort
+
+            // endregion
+
+            randomize(numberArray);
+
+            // region Shell Sort
+
+            // endregion
         }
-    }
 
-    /**
-     * Randomizes the numbers in an int[] array
-     *
-     * @param array The array to be randomized
-     */
-    private static void randomize(int[] array) {
-        Random r = new Random();
-        int n = array.length;
+        // region Helper Methods
+        /**
+         * Inserts random integers into an int[] array. All numbers have an upper bound of 1,000,000
+         *
+         * @param array Array to insert numbers into
+         */
+        private static void insertRandomNumbersIntoArray(int[] array) {
+            Random rand = new Random();
+            for (int i = 0; i < array.length; i++) {
+                array[i] = rand.nextInt(1000000);
+            }
+        }
+
+        /**
+         * Randomizes the numbers in an int[] array
+         *
+         * @param array The array to be randomized
+         */
+        private static void randomize(int[] array) {
+            Random r = new Random();
+            int n = array.length;
 
         /*
          Start from the last element and swap one by one. We don't
          need to run for the first element that's why i > 0
          */
-        for (int i = n - 1; i > 0; i--) {
-            int j = r.nextInt(i);
-            int temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            for (int i = n - 1; i > 0; i--) {
+                int j = r.nextInt(i);
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
         }
-    }
 
-    /**
-     * Prints all values in a List<String>
-     *
-     * @param list List containing the values to be printed
-     */
-    private static void printValue(List<String> list) {
-        for (String st : list) {
-            System.out.println(st);
+        /**
+         * Prints all values in a List<String>
+         *
+         * @param list List containing the values to be printed
+         */
+        private static void printValue(List<String> list) {
+            for (String st : list) {
+                System.out.println(st);
+            }
         }
-    }
 
-    // endregion
-}
+        // endregion
+    }
