@@ -298,25 +298,42 @@ underlying representation.
 
 
 Which one will take more memory: an int or Integer? Why?
-Answer:
+Answer: The Integer class allows conversion to float, double, long and short, while the int doesn't.
+The Integer consumes slightly more memory than the 32-bit Java int. The Integer class has five static properties while
+the int can't have any.
+
 
 Why are Strings considered to be immutable in Java?
-Answer:
+Answer: In Java, Strings are immutable, which means that once a String object is created, its contents cannot be changed.
+Instead, any operation that appears to modify a String actually creates a new String object with the modified content
 
 What is constructor chaining in Java?
-Answer:
+Answer: Constructor chaining in Java is the process of calling one constructor from another constructor with respect to
+the current object. It is used to avoid duplicate code while having multiple constructors and make the code more readable.
+
 
 The difference between Serial and Parallel Garbage Collector?
-Answer:
+Answer: Both garbage collectors are generational garbage collectors, meaning they divide the set of all objects into
+generations and collect all the objects in one or more generations in a single pass.The main difference between them is
+that the parallel garbage collector uses multiple threads for garbage collection,
+while the serial garbage collector uses only oneThe choice of garbage collector depends on the application requirements,
+ such as the size of the heap, the number of threads, and the pause time requirements.
+
 
 What does JIT stands for?
-Answer:
+Answer: JIT stands for Just-in-Time, which is an inventory management method in which goods are received from suppliers
+only as they are needed.
 
 Explain the process of Java garbage collection?
-Answer:
+Answer: Garbage collection is the process of reclaiming the runtime unused memory by destroying the unused objects.
+In Java, garbage collection is an automatic process that frees up memory space and makes coding Java apps easier for
+developers.Java objects are created on the heap, which is a section of memory dedicated to a program. When objects are
+no longer needed, the garbage collector finds and tracks these unused objects and deletes them to free up memory.
 
 Can you guarantee the garbage collection process?
-Answer:
+Answer: Garbage collection does not guarantee that a program will not run out of memory.Garbage collection is an automatic
+ process that helps to free unused memory by identifying and discarding objects that are no longer needed.
+
 
 What is the difference between stack and heap in Java?
 Answer:
