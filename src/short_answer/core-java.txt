@@ -55,52 +55,147 @@ What is an object?
 Answer:An object is an instance of a particular class or subclass with the class's own methods or procedures and data variables. It stores its state in fields and exposes its behavior through methods.
 
 What is the entry point of a Java project?
-Answer:
+Answer: In Java, the entry point of a project is the main method of the starting class.
+ The main method is a special method that serves as the starting point for the execution of a Java program.It must be declared as public static void main(String[] args)
+ The args parameter is an array of String objects that contains any command-line arguments passed to the program
+When the Java Virtual Machine (JVM) is told to run a Java application by specifying its class, it looks for the main method of that class
+ The main method is typically located in the class that contains the main method, but it can also be located in a different class.
 
 Why is the main() method static?
-Answer:
+Answer: The main() method in is always declared as static so that the JVM can call it without creating an instance of the class containing the main.
 
 Which class is the superclass of all classes?
-Answer:
+Answer: The superclass of all classes is the Object class, which is present in the java.lang package.
+Every class in Java is either directly or indirectly derived from the Object class.The Object class provides a set of methods that are inherited by all other classes in Java,
+ such as equals(), hashCode(), toString(), and getClass() .
 
 What is difference between path and classpath variables?
-Answer:
+Answer: In Java, PATH and CLASSPATH are two environment variables that are used to locate and load files.
+The main difference between PATH and CLASSPATH is that PATH is used by the operating system to locate executable files,
+such as java and javac, while CLASSPATH is used by the Java Virtual Machine (JVM) or the Java compiler to locate and load compiled Java bytecodes stored in the ".class" file.
+
 
 What is the difference between an Interface and Abstract class?
-Answer:
+Answer: An abstract class is a class that cannot be instantiated and can have both abstract and non-abstract methods.
+ Abstract methods are methods without a body that must be implemented by the concrete subclass.
+ Abstract classes can also have instance variables and concrete methods with implementation.
+ An abstract class can be extended by only one class, and it can implement multiple interfaces.
+On the other hand, an interface is a collection of abstract methods that must be implemented by the concrete class that implements the interface.
+An interface cannot have instance variables or concrete methods with implementation.
+A class can implement multiple interfaces, but it can extend only one class, whether it is an abstract class or a concrete class.
+
 
 Can you make an Object from an Interface and Abstract class? If yes or no, how would you do it?
-Answer:
+Answer: we cannot create an object of an abstract class or an interface directly since they are incomplete classes.
+ However,we can create a reference variable of an abstract class or an interface. The reference variable is used to refer to the objects of derived classes (subclasses of abstract class) .
+ To create an object of a class that implements an interface or extends an abstract class, we can use the new keyword to create an instance of the derived class
+  and assign it to a reference variable of the abstract class or interface type
+
+
 
 What is Access Modifier?
-Answer:
+Answer: Access modifiers in Java are used to set the accessibility or visibility of classes, interfaces, variables, methods, constructors, and data members.
+They are used to control the scope or accessibility of these element.In Java, there are four types of access modifiers: public, protected, default (also known as package-private), and private.
+
+-public: A public element can be accessed from anywhere in the program. There is no restriction on its accessibility.
+-protected: A protected element can be accessed within the same package or by a subclass in a different package.
+-default or package-private: An element with no access modifier specified is considered to have default access. It can be accessed only within the same package.
+-private: A private element can be accessed only within the same class.
+
+
 
 What is OOP? Define each OOP concept.
-Answer:
+Answer: Object-Oriented Programming (OOP) is a programming paradigm that focuses on the use of objects to represent and manipulate data.
+ OOP provides several key concepts that enable developers to write modular, reusable, and maintainable code.
+
+  In Java, the four primary OOP concepts are:
+ *Abstraction: Abstraction is the process of hiding implementation details while showing only the necessary information to the user. In Java, abstraction is achieved through abstract classes and interfaces.
+ *Encapsulation: Encapsulation is the process of binding data and methods that operate on that data into a single unit. In Java, encapsulation is achieved through the use of access modifiers such as public, private, and protected.
+ *Inheritance: Inheritance is the process of creating a new class from an existing class. The new class, called the subclass, inherits all the properties and methods of the existing class, called the superclass. In Java, inheritance is achieved using the "extends" keyword.
+ *Polymorphism: Polymorphism is the ability of an object to take on many forms. In Java, polymorphism is achieved through method overloading and method overriding.
 
 What is Java Package and which package is imported by default?
-Answer:
+Answer: In Java, a package is a namespace that groups related classes and interfaces. It is similar to a folder in a file directory and is used to
+avoid naming conflicts and to write better maintainable code.Java packages can be divided into two categories: built-in packages and user-defined packages.
+
+ In Java, two packages are imported by default in all classes: java.lang package and a no-name package (also called default package).
+ The java.lang package provides fundamental classes that are necessary to design a basic Java program, such as Object and Class
+ The no-name package is present by default and is named the default package
+  The Java Virtual Machine imports these packages by default in Java internally, which is why we are able to access all the classes of these packages without explicitly importing them.
+
 
 What is an API? List some API's that you have used so far.
-Answer:
+Answer: An API is a communication interface that allows two separate software components to share data
+APIs are essential tools for enterprises of all sizes because they allow one computer program's capabilities to be utilized by another
+ There are different types of APIs, including open APIs, partner APIs, composite APIs, and web service APIs.
+
+ some API that I have used:
+  Pay with PayPal
+  Google Maps
+  Google Search
+Rapid Translate Multi Traduction.
+
 
 Does java support multiple inheritance? Why or why not?
-Answer:
+Answer:No, Java does not support multiple inheritance in classes. This means that a class cannot extend more than one class.
+The reason behind this is to prevent ambiguity that can arise when a class inherits from multiple classes that have the same method or field.
+
 
 What is method overloading? List all of the different ways to overload.
-Answer:
+Answer: Method overloading is a feature in Java that allows a class to have multiple methods with the same name but different parameters.
+ By having the same name of the methods, the readability of the program increases
+      There are different ways to overload a method in Java, which are:
+      -By changing the number of parameters: A method can be overloaded by changing the number of parameters
+
+      -By changing the data type of parameters: Method overloading can also be achieved by changing the data type of parameters
+
+     - By changing the order of parameters: Method overloading can also be achieved by changing the order of parameters
+
 
 Explain exceptions in java and how to handle them.
-Answer:
+Answer: An exception is an event that disrupts the normal flow of a program and indicates that something bad has happened in the application.
+ Exception handling is a mechanism in Java to handle runtime errors such as ClassNotFoundException, IOException, SQLException, and RemoteException, among others.
+To handle exceptions in Java, the try-catch block is used. The code that may throw an exception is enclosed in the try block, and any exceptions that are thrown are caught by one or more catch blocks.
+
 
 What is static keyword? When and how do we use it?
-Answer:
+Answer: The static keyword in Java is a non-access modifier that can be used with variables, methods, blocks, and nested classes. It is mainly used for memory management.
+and also a static method cannot access non-static variables or methods directly
+The static keyword is used to share the same variable or method of a given class. It is used for a constant variable or a method that is the same for every instance of a clas.
+*some common use cases for the static keyword:
+-static variables: When a variable is declared as static, it is known as a class variable or a static member. A single copy of the variable is created and shared among all instances of the class. This can be useful for creating constants or for storing data that is shared across all instances of a class
+
+-static methods: When a method is declared as static, it is known as a class method or a static method. A static method can be called without creating an instance of the class.
+This can be useful for utility methods that don't depend on the state of any particular instance of a class
+
+-static blocks: A static block is a block of code that is executed when a class is loaded into memory.
+This can be useful for initializing static variables or for performing other one-time setup tasks.
+
+-static nested classes: A static nested class is a class that is defined inside another class and marked as static.
+ This means that it can be instantiated without creating an instance of the outer class. This can be useful for grouping related functionality together.
+
 
 What is final keyword? When and how do we use it?
-Answer:
+Answer: The final keyword is a non-access modifier in Java that can be used with classes, attributes, and methods to make them non-changeable, meaning they cannot be inherited
+or overridden.
+The final keyword is called a "modifier" and is used in different contexts. It is a useful tool for improving code quality and ensuring that certain aspects of a program
+cannot be modified or extended. By declaring variables, methods, and classes as final, developers can write more secure, robust, and maintainable code.
+
 
 Explain the difference between final, finally and finalize?
-Answer:
+Answer: 'final' final is a keyword used in Java to restrict the modification of a variable, method, or class
+   A final class cannot be inherited, a final method cannot be overridden, and a final variable cannot be reassigned.
+
+'finally' finally is a block used in Java to ensure that a section of code is always executed, even if an exception is thrown. It is used in association with a try/catch block and guarantees that a section of code will be executed, even if an exception is thrown
+
+'finalize' is a method in Java used to perform cleanup processing on an object before it is garbage collected.
+It is used just before an object is destroyed and can be called just prior to object creation.
+It is a method of the Object class.
+
+"final is used to restrict modification, finally is used to ensure a section of code is always executed, and finalize is used to perform cleanup processing
+ on an object before it is garbage collected."
+
+
 
 What is a constructor?
 Answer:
